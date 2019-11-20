@@ -1,0 +1,4 @@
+numpy==1.16.5
+opencv_python==4.1.1.26
+gtts==2.0.4
+SpeechRecognition==3.8.1
