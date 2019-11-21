@@ -76,7 +76,12 @@ sudo apt-get install -y --no-install-recommends libboost-all-dev
 cd /usr/lib/x86_64-linux-gnu
 sudo ln -s libhdf5_serial.so.100.0.1 libhdf5.so
 sudo ln -s libhdf5_serial_hl.so.100.0.0 libhdf5_hl.so
+
 export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/
+export CPATH="/usr/include/hdf5/serial/"
+
+echo export CPATH="/usr/include/hdf5/serial/" >> ~/.bashrc
+echo export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/ >> ~/.bashrc
 
 
 
@@ -89,3 +94,14 @@ cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile.config  ~/D
 cd ~/Documents/BirdWatcher/caffe/
 make all
 make py
+
+
+
+
+cd ~/Documents/BirdWatcher/caffe
+cd python
+
+export PYTHONPATH="/usr/lib/python3.6:$(pwd):$PYTHONPATH"
+echo export PYTHONPATH=/usr/lib/python3.6:$(pwd):$PYTHONPATH >> ~/.bashrc
+
+
