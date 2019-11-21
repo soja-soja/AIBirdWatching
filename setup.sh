@@ -3,6 +3,7 @@
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install git python3.6 python3-pip vim tree
+sudo apt-get install portaudio19-dev python-pyaudio python3-pyaudio
 
 cd ~/Documents/
 mkdir BirdWatcher
