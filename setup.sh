@@ -41,6 +41,9 @@ cd labelImg
 sudo pip3 install -r requirements/requirements-linux-python3.txt
 make qt5py3
 
+python3 labelImg.py ../DownloadedImages/hummingbird/
+# and then:
+python3 labelImg.py ../DownloadedImages/blue jay/
 
 cd ~/Documents/BirdWatcher
 mkdir MyDataset
