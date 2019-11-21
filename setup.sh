@@ -117,7 +117,13 @@ make all
 make py
 
 
+mkdir ~/Documents/BirdWatcher/caffe/data/CustomDataset
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/data/CustomDataset/create_data.sh ~/Documents/BirdWatcher/caffe/data/CustomDataset
 
+
+cd ~/Documents/BirdWatcher/caffe/data/CustomDataset
+chmod +x create_data.sh
+./create_data.sh
 
 cd ~/Documents/BirdWatcher/caffe
 cd python
