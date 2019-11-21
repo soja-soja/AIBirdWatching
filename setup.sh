@@ -69,7 +69,7 @@ echo  export CAFFE_ROOT=$CAFFE_ROOT:$(pwd) >> ~/.bashrc
 sudo apt install caffe-cpu
 # for GPU:
 #sudo apt install caffe-cuda
-sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev  python3-dev python-numpy python-scipy libopencv-dev
+sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev  python3-dev python-numpy python-scipy libopencv-dev liblapack-dev liblapack3 libopenblas-base libopenblas-dev
 # libjasper-dev
 sudo apt-get install -y --no-install-recommends libboost-all-dev
 
