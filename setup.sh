@@ -58,7 +58,12 @@ cp */*.xml ~/Documents/BirdWatcher/MyDataset/bird_dataset/Labels/
 
 
 cd ~/Documents/BirdWatcher/
-git clone --depth 1 https://github.com/weiliu89/caffe.git
+
+# get INTEL OPTIMIZED CAFFE
+git clone https://github.com/BVLC/caffe.git
+
+#git clone --depth 1 https://github.com/weiliu89/caffe.git
+
 cd caffe 
 export CAFFE_ROOT=$CAFFE_ROOT:$(pwd)
 # add this in your ~/.bashrc so you dont have to do this after each restart or system shutdown:
@@ -86,7 +91,7 @@ echo export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/ >> ~/.bashrc
 
 
 cd ~/Documents/BirdWatcher/caffe/
-cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile.config  ~/Documents/BirdWatcher/caffe/
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile_intel.config  ~/Documents/BirdWatcher/caffe/Makefile.config
 
 
 
