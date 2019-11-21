@@ -44,7 +44,7 @@ make qt5py3
 
 python3 labelImg.py ../DownloadedImages/hummingbird/
 # and then:
-python3 labelImg.py ../DownloadedImages/blue jay/
+python3 labelImg.py "../DownloadedImages/blue jay/"
 
 cd ~/Documents/BirdWatcher
 mkdir MyDataset
