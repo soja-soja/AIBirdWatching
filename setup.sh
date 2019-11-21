@@ -42,9 +42,10 @@ cd labelImg
 sudo pip3 install -r requirements/requirements-linux-python3.txt
 make qt5py3
 
-python3 labelImg.py ../DownloadedImages/hummingbird/
+python3 labelImg.py ../DownloadedImages/hummingbird/ ../AIBirdWatching/BirdWatcher/pre_defined_labels.txt 
+
 # and then:
-python3 labelImg.py "../DownloadedImages/blue jay/"
+python3 labelImg.py "../DownloadedImages/blue jay/" ../AIBirdWatching/BirdWatcher/pre_defined_labels.txt 
 
 cd ~/Documents/BirdWatcher
 mkdir MyDataset
