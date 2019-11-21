@@ -140,3 +140,8 @@ cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
 
 cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
 python3 merge_bin.py snapshot/$(ls snapshot|head -n 1)
+
+
+
+cd ~/Documents/BirdWatcher/AIBirdWatching/gists/
+python3 Run.py -mc "~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/MobileNetSSD_birds_soja.caffemodel" -p "~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/example/MobileNetSSD_deploy.prototxt"
