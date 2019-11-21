@@ -34,6 +34,11 @@ unzip chromedriver_linux64.zip
 googleimagesdownload --keywords "hummingbird" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
 googleimagesdownload --keywords "blue jay" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
 
+# Repeating the last two commands twice just to make sure it will get the images, 
+# as it sometimes will quit due to rate limit, connection issue, etc
+googleimagesdownload --keywords "hummingbird" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
+googleimagesdownload --keywords "blue jay" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
+
 
 sudo apt-get install -y pyqt5-dev-tools
 cd ~/Documents/BirdWatcher
