@@ -87,10 +87,8 @@ def initiateMYRIAD():
     log = logging.getLogger()
 
 
-    model_xml =  r'C:\Users\soja_\OneDrive\Documents\Python\Bird_watcher\SOJA\SOJA_reTrained_Model\openVino\openvino_2019.2.242\deployment_tools\soja\MobileNetSSD_birds_soja.xml'
+    model_xml = args.model
     model_bin = os.path.splitext(model_xml)[0] + ".bin"
-
-    model_bin
 
     device = 'MYRIAD' #CPU, GPU, FPGA or MYRIAD
     plugin_dir = None
