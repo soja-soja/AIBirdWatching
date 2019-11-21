@@ -1,14 +1,14 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 
 cur_dir=$(cd $( dirname ${BASH_SOURCE[0]} ) && pwd )
-root_dir="/home/sj/Documents/reTrain/caffe"
+root_dir="~/Documents/BirdWatch/caffe"
 
 cd $root_dir
 
 redo=1
 dataset_name="bird_dataset" #Edit this to your dataset name. Don't change anything else
-data_root_dir="/home/sj/Documents/reTrain/MyDataset/bird_dataset"
+data_root_dir="~/Documents/BirdWatch/MyDataset/bird_dataset"
 mapfile="$data_root_dir/labelmap.prototxt"
 anno_type="detection"
 db="lmdb"
