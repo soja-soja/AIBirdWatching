@@ -60,13 +60,22 @@ cp */*.jpg ~/Documents/BirdWatcher/MyDataset/bird_dataset/Images/
 cp */*.xml ~/Documents/BirdWatcher/MyDataset/bird_dataset/Labels/
 
 
+cd ~/Documents/BirdWatcher/AIBirdWatching/gists/
+python3 trainval_creator.py
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/MyDataset/bird_dataset/labelmap.prototxt ~/Documents/BirdWatcher/MyDataset/bird_dataset/
+
+
 cd ~/Documents/BirdWatcher/
 
 git clone --branch ssd --depth 1 https://github.com/weiliu89/caffe.git
 
-# get INTEL OPTIMIZED CAFFE
-#git clone https://github.com/intel/caffe.git
-#git clone https://github.com/BVLC/caffe.git
+## or get INTEL OPTIMIZED CAFFE
+# git clone https://github.com/intel/caffe.git
+## in that case do the following:
+# sudo apt-get install python3-venv
+# python3 -m venv env
+# source env/bin/activate 
+# caffe/scripts/prepare_env.sh
 
 
 cd caffe 
