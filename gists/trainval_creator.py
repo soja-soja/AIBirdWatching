@@ -1,3 +1,5 @@
+import os
+
 def createTrainvalTxt(baseDirDataSet):
     buffer = ''
     baseDir = baseDirDataSet+'/Images'
