@@ -80,9 +80,9 @@ git clone --branch ssd --depth 1 https://github.com/weiliu89/caffe.git
 
 
 cd caffe 
-export CAFFE_ROOT=$CAFFE_ROOT:$(pwd)
+export CAFFE_ROOT=$(pwd)
 # add this in your ~/.bashrc so you dont have to do this after each restart or system shutdown:
-echo  export CAFFE_ROOT=$CAFFE_ROOT:$(pwd) >> ~/.bashrc
+echo  export CAFFE_ROOT=$(pwd) >> ~/.bashrc
 
 
 # for CPU:
@@ -97,11 +97,11 @@ cd /usr/lib/x86_64-linux-gnu
 sudo ln -s libhdf5_serial.so.100.0.1 libhdf5.so
 sudo ln -s libhdf5_serial_hl.so.100.0.0 libhdf5_hl.so
 
-export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/
+export PATH_HDF5="/usr/include/hdf5/serial/"
 export CPATH="/usr/include/hdf5/serial/"
 
 echo export CPATH="/usr/include/hdf5/serial/" >> ~/.bashrc
-echo export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/ >> ~/.bashrc
+echo export PATH_HDF5=/usr/include/hdf5/serial/ >> ~/.bashrc
 
 
 
@@ -122,8 +122,8 @@ make py
 cd ~/Documents/BirdWatcher/caffe
 cd python
 
-export PYTHONPATH="/usr/lib/python3.6:$(pwd):$PYTHONPATH"
-echo export PYTHONPATH=/usr/lib/python3.6:$(pwd):$PYTHONPATH >> ~/.bashrc
+export PYTHONPATH="/usr/lib/python3.6:$(pwd)"
+echo export PYTHONPATH=/usr/lib/python3.6:$(pwd) >> ~/.bashrc
 
 
 
