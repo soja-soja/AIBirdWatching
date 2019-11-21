@@ -136,8 +136,8 @@ ln -s ~/Documents/BirdWatcher/MyDataset/bird_dataset/labelmap.prototxt labelmap.
 cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/solver_test.prototxt ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
 cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/solver_train.prototxt ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
 cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/train.sh ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
-cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/merge_bin.py ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
-
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/merge_bn.py ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/src/caffe/util/math_functions.cpp ~/Documents/BirdWatcher/caffe/src/caffe/util/
 
 cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
 ./gen_model.sh 3
