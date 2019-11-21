@@ -133,3 +133,7 @@ cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
 
 ./train.sh
 
+
+
+cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
+python3 merge_bin.py snapshot/$(ls snapshot|head -n 1)
