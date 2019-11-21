@@ -113,3 +113,23 @@ export PYTHONPATH="/usr/lib/python3.6:$(pwd):$PYTHONPATH"
 echo export PYTHONPATH=/usr/lib/python3.6:$(pwd):$PYTHONPATH >> ~/.bashrc
 
 
+
+cd ~/Documents/BirdWatcher/caffe/examples
+git clone --depth 1 https://github.com/chuanqi305/MobileNet-SSD
+
+cd MobileNet-SSD
+ln -s ~/Documents/BirdWatcher/MyDataset/bird_dataset/bird_dataset/lmdb/bird_dataset_trainval_lmdb/ trainval_lmdb
+ln -s ~/Documents/BirdWatcher/MyDataset/bird_dataset/bird_dataset/lmdb/bird_dataset_test_lmdb/ test_lmdb
+ln -s ~/Documents/BirdWatcher/MyDataset/bird_dataset/labelmap.prototxt labelmap.prototxt
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/solver_test.prototxt ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/solver_train.prototxt ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/train.sh ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/examples/MobileNet-SSD/merge_bin.py ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD/
+
+
+cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
+./gen_model.sh 3
+
+
+./train.sh
+

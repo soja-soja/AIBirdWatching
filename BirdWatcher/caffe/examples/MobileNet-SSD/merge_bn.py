@@ -16,7 +16,7 @@ from google.protobuf import text_format
 
 
 train_proto = 'example/MobileNetSSD_train.prototxt'  #Don't change this
-train_model = 'snapshot/mobilenet_iter_2242.caffemodel'  #Required: Edit this to your snapshot caffemodel
+train_model = sys.argv[1] #'snapshot/mobilenet_iter_2242.caffemodel'  #Required: Edit this to your snapshot caffemodel
 deploy_proto = 'example/MobileNetSSD_deploy.prototxt'  #Don't change this
  
 
