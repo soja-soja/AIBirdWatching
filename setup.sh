@@ -60,8 +60,9 @@ cp */*.xml ~/Documents/BirdWatcher/MyDataset/bird_dataset/Labels/
 cd ~/Documents/BirdWatcher/
 
 # get INTEL OPTIMIZED CAFFE
-git clone https://github.com/BVLC/caffe.git
+git clone https://github.com/intel/caffe.git
 
+#git clone https://github.com/BVLC/caffe.git
 #git clone --depth 1 https://github.com/weiliu89/caffe.git
 
 cd caffe 
