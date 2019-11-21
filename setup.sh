@@ -32,7 +32,7 @@ cd ~/Downloads
 wget https://chromedriver.storage.googleapis.com/78.0.3904.105/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
 googleimagesdownload --keywords "hummingbird" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
-googleimagesdownload --keywords "blue jay" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg-o ~/Documents/BirdWatcher/DownloadedImages/
+googleimagesdownload --keywords "blue jay" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
 
 
 sudo apt-get install pyqt5-dev-tools
