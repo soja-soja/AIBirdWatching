@@ -2,7 +2,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git python3.6 python3-pip
+sudo apt-get install git python3.6 python3-pip vim
 
 cd ~/Documents/
 mkdir BirdWatcher
@@ -73,8 +73,17 @@ sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev lib
 # libjasper-dev
 sudo apt-get install -y --no-install-recommends libboost-all-dev
 
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libhdf5_serial.so.100.0.1 libhdf5.so
+sudo ln -s libhdf5_serial_hl.so.100.0.0 libhdf5_hl.so
+export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/
+
+
+
 cd ~/Documents/BirdWatcher/caffe/
 cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile.config  ~/Documents/BirdWatcher/caffe/
+
+
 
 
 cd ~/Documents/BirdWatcher/caffe/
