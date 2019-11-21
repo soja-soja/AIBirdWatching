@@ -9,7 +9,7 @@ item {
   display_name: "hummingbird"
 }
 item {
-  name: "Fedex"
+  name: "blue_jay"
   label: 2
-  display_name: "fedex"
+  display_name: "blue_jay"
 }
