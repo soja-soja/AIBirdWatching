@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install git python3.6 python3-pip vim tree
-sudo apt-get install portaudio19-dev python-pyaudio python3-pyaudio
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install -y git python3.6 python3-pip vim tree
+sudo apt-get install -y portaudio19-dev python-pyaudio python3-pyaudio
 
 cd ~/Documents/
 mkdir BirdWatcher
@@ -35,7 +35,7 @@ googleimagesdownload --keywords "hummingbird" --limit 100 --chromedriver ~/Downl
 googleimagesdownload --keywords "blue jay" --limit 100 --chromedriver ~/Downloads/chromedriver --format jpg -o ~/Documents/BirdWatcher/DownloadedImages/
 
 
-sudo apt-get install pyqt5-dev-tools
+sudo apt-get install -y pyqt5-dev-tools
 cd ~/Documents/BirdWatcher
 git clone https://github.com/tzutalin/labelImg.git
 cd labelImg
@@ -86,7 +86,7 @@ echo  export CAFFE_ROOT=$CAFFE_ROOT:$(pwd) >> ~/.bashrc
 
 
 # for CPU:
-sudo apt install caffe-cpu
+sudo apt install -y caffe-cpu
 # for GPU:
 #sudo apt install caffe-cuda
 sudo apt-get install -y build-essential cmake git pkg-config libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev libgflags-dev libgoogle-glog-dev liblmdb-dev  python3-dev python-numpy python-scipy libopencv-dev liblapack-dev liblapack3 libopenblas-base libopenblas-dev
