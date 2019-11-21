@@ -16,7 +16,11 @@ from math import exp as exp
 from time import time
 
 import cv2
-from openvino.inference_engine import IENetwork, IEPlugin
+try:
+    from openvino.inference_engine import IENetwork, IEPlugin
+except:
+    print('No openvino found, Install it!')
+
 
 
 
