@@ -2,7 +2,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install git python3.6 python3-pip vim
+sudo apt-get install git python3.6 python3-pip vim tree
 
 cd ~/Documents/
 mkdir BirdWatcher
@@ -59,11 +59,12 @@ cp */*.xml ~/Documents/BirdWatcher/MyDataset/bird_dataset/Labels/
 
 cd ~/Documents/BirdWatcher/
 
-# get INTEL OPTIMIZED CAFFE
-git clone https://github.com/intel/caffe.git
+git clone --branch ssd --depth 1 https://github.com/weiliu89/caffe.git
 
+# get INTEL OPTIMIZED CAFFE
+#git clone https://github.com/intel/caffe.git
 #git clone https://github.com/BVLC/caffe.git
-#git clone --depth 1 https://github.com/weiliu89/caffe.git
+
 
 cd caffe 
 export CAFFE_ROOT=$CAFFE_ROOT:$(pwd)
@@ -92,9 +93,10 @@ echo export PATH_HDF5=$PATH_HDF5:/usr/include/hdf5/serial/ >> ~/.bashrc
 
 
 cd ~/Documents/BirdWatcher/caffe/
-cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile_intel.config  ~/Documents/BirdWatcher/caffe/Makefile.config
+cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile.config  ~/Documents/BirdWatcher/caffe/Makefile.config
 
-
+# if using INTEL optimized Caffe:
+#cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile_intel.config  ~/Documents/BirdWatcher/caffe/Makefile.config
 
 
 cd ~/Documents/BirdWatcher/caffe/
