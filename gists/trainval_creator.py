@@ -14,8 +14,8 @@ def createTrainvalTxt(baseDirDataSet):
             print(repr(img_file), repr(anno))
             buffer+=s
         else:
-            removeFiles.append('Images/'+filename)
-            removeFiles.append('Labels/'+filenameOnly+'.xml')
+            removeFiles.append(baseDirDataSet+'/Images/'+filename)
+            removeFiles.append(baseDirDataSet+'/Labels/'+filenameOnly+'.xml')
 
     with open(baseDirDataSet+'/Structure/trainval.txt', 'w') as file:
         file.write(buffer)  
