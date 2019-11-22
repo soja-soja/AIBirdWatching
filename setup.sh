@@ -111,7 +111,12 @@ echo export PATH_HDF5=/usr/include/hdf5/serial/ >> ~/.bashrc
 
 
 
-cd ~/Documents/BirdWatcher/caffe/
+cd ~/Documents/BirdWatcher/caffe/python
+export PYTHONPATH="/usr/lib/python3.6:$(pwd)"
+echo export PYTHONPATH=/usr/lib/python3.6:$(pwd) >> ~/.bashrc
+
+source ~/.bashrc
+
 cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/Makefile.config  ~/Documents/BirdWatcher/caffe/Makefile.config
 
 # if using INTEL optimized Caffe:
@@ -122,13 +127,7 @@ cd ~/Documents/BirdWatcher/caffe/
 make all
 make py
 
-cd ~/Documents/BirdWatcher/caffe
-cd python
 
-export PYTHONPATH="/usr/lib/python3.6:$(pwd)"
-echo export PYTHONPATH=/usr/lib/python3.6:$(pwd) >> ~/.bashrc
-
-source ~/.bashrc
 
 
 
