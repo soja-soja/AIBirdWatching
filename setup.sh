@@ -122,6 +122,15 @@ cd ~/Documents/BirdWatcher/caffe/
 make all
 make py
 
+cd ~/Documents/BirdWatcher/caffe
+cd python
+
+export PYTHONPATH="/usr/lib/python3.6:$(pwd)"
+echo export PYTHONPATH=/usr/lib/python3.6:$(pwd) >> ~/.bashrc
+
+source ~/.bashrc
+
+
 
 mkdir ~/Documents/BirdWatcher/caffe/data/CustomDataset
 cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/data/CustomDataset/create_data.sh ~/Documents/BirdWatcher/caffe/data/CustomDataset
@@ -130,12 +139,6 @@ cp ~/Documents/BirdWatcher/AIBirdWatching/BirdWatcher/caffe/data/CustomDataset/c
 cd ~/Documents/BirdWatcher/caffe/data/CustomDataset
 chmod +x create_data.sh
 ./create_data.sh
-
-cd ~/Documents/BirdWatcher/caffe
-cd python
-
-export PYTHONPATH="/usr/lib/python3.6:$(pwd)"
-echo export PYTHONPATH=/usr/lib/python3.6:$(pwd) >> ~/.bashrc
 
 
 
