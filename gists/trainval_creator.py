@@ -12,6 +12,12 @@ def createTrainvalTxt(baseDirDataSet):
             img_file, anno = s.strip("\n").split(" ")
             print(repr(img_file), repr(anno))
             buffer+=s
+        else:
+            os.remove(filename)
+            try:
+                os.remove(filenameOnly+'.xml')
+            except:
+                pass
     with open(baseDirDataSet+'/Structure/trainval.txt', 'w') as file:
         file.write(buffer)  
     with open(baseDirDataSet+'/Structure/test.txt', 'w') as file:
