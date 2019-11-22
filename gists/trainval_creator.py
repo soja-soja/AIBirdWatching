@@ -1,6 +1,7 @@
 import os
 
 def createTrainvalTxt(baseDirDataSet):
+    removeFiles=[]
     buffer = ''
     baseDir = baseDirDataSet+'/Images'
     for filename in os.listdir(baseDir):
@@ -13,15 +14,19 @@ def createTrainvalTxt(baseDirDataSet):
             print(repr(img_file), repr(anno))
             buffer+=s
         else:
-            os.remove(filename)
-            try:
-                os.remove(filenameOnly+'.xml')
-            except:
-                pass
+            removeFiles.append(filename)
+            removeFiles.append(filenameOnly+'.xml')
+
     with open(baseDirDataSet+'/Structure/trainval.txt', 'w') as file:
         file.write(buffer)  
     with open(baseDirDataSet+'/Structure/test.txt', 'w') as file:
         file.write(buffer)  
+    
+    for file in removeFiles:
+        try:
+            os.remove(file)
+        except:
+            pass
     print('Done')   
 #Usage
 createTrainvalTxt('../../MyDataset/bird_dataset')
