@@ -279,7 +279,7 @@ if __name__ == '__main__':
 
     # ============================== SOJA ReTrained MobileNetSSD model ==========================
     confidence_thr = float(args.prob_threshold)
-    CLASSES = ["background", "hummingbird" , "Fedex"]
+    CLASSES = ["background", "hummingbird" , "blue jay", "Fedex"]
     
     if args.device=='CPU':
         shared_dir = 'SOJA_reTrained_Model/'
