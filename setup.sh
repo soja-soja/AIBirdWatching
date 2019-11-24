@@ -163,7 +163,7 @@ cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
 
 
 cd ~/Documents/BirdWatcher/caffe/examples/MobileNet-SSD
-python3 merge_bn.py snapshot/$(ls snapshot|head -n 1)
+python3 merge_bn.py snapshot/$(ls snapshot|grep caffemodel |tail -n 1)
 
 
 
