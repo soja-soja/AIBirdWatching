@@ -282,9 +282,10 @@ if __name__ == '__main__':
     CLASSES = ["background", "hummingbird" , "blue jay", "Fedex"]
     
     if args.device=='CPU':
-        shared_dir = 'SOJA_reTrained_Model/'
+        # shared_dir = 'SOJA_reTrained_Model/'
         # net = cv2.dnn.readNetFromCaffe(shared_dir+ '/MobileNetSSD_deploy.prototxt' , shared_dir+ '/MobileNetSSD_birds_soja.caffemodel')
-        net = cv2.dnn.readNetFromCaffe(shared_dir+ '/MobileNetSSD_SOJA_deploy.prototxt' , shared_dir+ '/MobileNetSSD_birds_soja.caffemodel')
+        # net = cv2.dnn.readNetFromCaffe(shared_dir+ '/MobileNetSSD_SOJA_deploy.prototxt' , shared_dir+ '/MobileNetSSD_birds_soja.caffemodel')
+        net = cv2.dnn.readNetFromCaffe(args.modelproto , args.modelCaffe)
         # ===========================================================================================
     elif args.device=='MYRIAD':
         net,plugin = initiateMYRIAD()
