@@ -1,0 +1,6 @@
+cd C:\Users\soja_\OneDrive\Documents\Python\Bird_watcher\Re-Train\env\Scripts
+activate.bat
+
+cd Z:\AIBirdWatching\gists
+Z:\
+python Run.py -mc "Z:\AI_TMP\Cleaned\model\model\MobileNetSSD_birds_soja_2000.caffemodel" -p "Z:\AI_TMP\Cleaned\model\model\MobileNetSSD_deploy.prototxt" -i "Z:\AI_TMP\Fedex1.mp4"
