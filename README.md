@@ -4,7 +4,7 @@ I walk you through required steps for testing and re-training a pre-trained obje
 
 Read the tutorial from here: [Link]
 
-# If you're in rush to give it a try, then the short version is as follows:
+## If you're in rush to give it a try, then the short version is as follows:
 
 To start, create a virtualbox/vmware Ubuntu machine, update the OS and install required packages as follows:
 ```
