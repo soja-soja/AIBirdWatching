@@ -2394,7 +2394,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 9
+    num_output: 12
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2504,7 +2504,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 18
+    num_output: 24
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2616,7 +2616,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 18
+    num_output: 24
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2728,7 +2728,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 18
+    num_output: 24
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2840,7 +2840,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 18
+    num_output: 24
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -2952,7 +2952,7 @@ layer {
     decay_mult: 0.0
   }
   convolution_param {
-    num_output: 18
+    num_output: 24
     kernel_size: 1
     weight_filler {
       type: "msra"
@@ -3055,7 +3055,7 @@ layer {
     shape {
       dim: 0
       dim: -1
-      dim: 3
+      dim: 4
     }
   }
 }
@@ -3088,7 +3088,7 @@ layer {
     phase: TEST
   }
   detection_output_param {
-    num_classes: 3
+    num_classes: 4
     share_location: true
     background_label_id: 0
     nms_param {

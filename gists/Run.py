@@ -132,19 +132,30 @@ def applyModelWithVoice(image):
         net.setInput(blob)
         detections = net.forward()
         det_time = time() - start_time
-    else:
-        
+
+    elif args.device.lower()=='hybrid':
+        start_time = time()
+        net.setInput(blob)
+        detections = net.forward()
+        for i in np.arange(0, detections.shape[2]):
+            idx = int(detections[0, 0, i, 1])
+            if CLASSES_org[idx] == 'bird':
+                net_bird.setInput(blob)
+                detections = net_bird.forward()
+                break
+        det_time += time() - start_time
+    
+    else:    
         start_time = time()
         detections = exec_net.infer({'data': blob})['detection_out']
         det_time = time() - start_time
     
 
-    if args.type.lower()=='hybrid':
-        print('HYBRID TODO....')
-        # TODO: first  run net and then retrained model if class is bird!
+    
+        
 
-    cv2.putText(image, 'Inference Time: ({:.3f})seconds'.format(det_time), (30, 460),
-                cv2.FONT_HERSHEY_SIMPLEX, 1, (5 ,44 ,101), 2)
+    cv2.putText(image, 'Inference Time: ({:.3f})seconds'.format(det_time), (15, h-15),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.75, (255 ,0 ,0), 2)
     
     seenObj = []
     # loop over the detections
@@ -232,16 +243,17 @@ def build_argparser():
     parser = ArgumentParser()
     parser.add_argument("-mc", "--modelCaffe", help="Path to an .caffemodel file with a trained model.", required=False, type=str)
     parser.add_argument("-p", "--modelproto", help="Path to an .prototxt file with a trained model.", required=False, type=str)
-
+    
+    parser.add_argument("-mb", "--modelbase", help="Path to an .caffemodel file with a trained model.", required=False, type=str)
+    
     parser.add_argument("-m", "--model", help="Path to an .xml file with a trained model.", required=False, type=str)
     
     parser.add_argument("-i", "--input", help="Path to a image/video file. (Specify 'cam' to work with camera)",
                         required=False, type=str, default="cam")
     parser.add_argument("-d", "--device",
-                        help="Specify the target device to infer on; CPU, GPU, FPGA or MYRIAD is acceptable. Sample "
+                        help="Specify the target device to infer on; CPU, GPU, FPGA or MYRIAD is acceptable. Sample |  or HYBRID for multi model test"
                              "will look for a suitable plugin for device specified (CPU by default)", default="CPU",  required=False,
                         type=str)
-    parser.add_argument("-t", "--type", help="Type: hybrid or normal", default="normal",  required=False, type=str)
     
     parser.add_argument("-pt", "--prob_threshold", help="Probability threshold for detections filtering",
                         default=0.5, type=float)
@@ -270,10 +282,10 @@ if __name__ == '__main__':
 
 
     # ============================== Default MobileNetSSD model =================================
-    # CLASSES = ["background", "aeroplane", "bicycle", "bird", "boat",
-    #     "bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
-    #     "dog", "horse", "motorbike", "person", "pottedplant", "sheep",
-    #     "sofa", "train", "tvmonitor"]
+    CLASSES_org = ["background", "aeroplane", "bicycle", "bird", "boat",
+        "bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
+        "dog", "horse", "motorbike", "person", "pottedplant", "sheep",
+        "sofa", "train", "tvmonitor"]
     # shared_dir = 'object-detection-deep-learning/object-detection-deep-learning/'
     # net = cv2.dnn.readNetFromCaffe(shared_dir+ '/MobileNetSSD_deploy.prototxt.txt' , shared_dir+ '/MobileNetSSD_deploy.caffemodel')
 
@@ -287,6 +299,14 @@ if __name__ == '__main__':
         # net = cv2.dnn.readNetFromCaffe(shared_dir+ '/MobileNetSSD_SOJA_deploy.prototxt' , shared_dir+ '/MobileNetSSD_birds_soja.caffemodel')
         net = cv2.dnn.readNetFromCaffe(args.modelproto , args.modelCaffe)
         # ===========================================================================================
+    elif args.device.lower()=='hybrid':
+        if not args.modelbase:
+            print('For hybrid model please pass the path to the "-mb mobilenet_iter_73000.caffemodel"')
+            exit()
+
+        net = cv2.dnn.readNetFromCaffe(args.modelproto , args.modelbase)
+        net_bird = cv2.dnn.readNetFromCaffe(args.modelproto , args.modelCaffe)
+
     elif args.device=='MYRIAD':
         net,plugin = initiateMYRIAD()
         exec_net = plugin.load(network=net)#, num_requsts=2)
