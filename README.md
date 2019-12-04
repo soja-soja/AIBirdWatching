@@ -4,7 +4,7 @@ I walk you through required steps for testing and re-training a pre-trained obje
 
 Read the tutorial from here: [Link](https://medium.com/@itsoja/smart-bird-watcher-customizing-pre-trained-ai-models-to-detect-birds-of-interest-dca1202bfbdf)
 <p align="center">
-![Drag Racing](https://miro.medium.com/max/600/1*mJzFUfkb1vo4x8e_Xz7UOQ.png)
+ <img src="https://miro.medium.com/max/600/1*mJzFUfkb1vo4x8e_Xz7UOQ.png" align="center" alt="AI bird watcher Intel ">
 </p>
 
 ## If you're in rush to give it a try, then the short version is as follows:
